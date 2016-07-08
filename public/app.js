@@ -6,7 +6,6 @@ angular.module("app", ['ui.bootstrap'])
     category: "",
     timestamp: "",
     state: ""
-    
   }
 
 
@@ -30,3 +29,7 @@ angular.module("app", ['ui.bootstrap'])
   //
   // }
 })
+
+var func = function(){
+  return "func"
+}
