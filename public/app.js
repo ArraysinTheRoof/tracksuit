@@ -1,35 +1,24 @@
 angular.module("app", ['ui.bootstrap'])
 
 .controller('appController', function($scope, $http, $document){
-  $scope.state = "Start"
+  $scope.state = "start"
   $scope.payload = {
     category: "",
-    timestamp: "",
+    time: "",
     state: ""
   }
 
 
-  $scope.sendData = function($event, $document){
+  $scope.sendData = function($document){
     var target = document.getElementById('category').innerHTML
     $scope.payload.category = target;
-    $scope.payload.timestamp = Date.now();
+    $scope.payload.time = Date.now();
     $scope.payload.state = $scope.state
-    $http.post('/api/toggleActivity', JSON.stringify($scope.payload))
+    $http.post('/api/toggleActivity', $scope.payload)
   }
 
-// testing stuff
   $scope.changeState = function(){
-    $scope.state === "Start" ? $scope.state = "Stop" : $scope.state = "Start"
+    $scope.state === "start" ? $scope.state = "stop" : $scope.state = "start"
   }
 
-
-  //
-  //
-  // $scope.recieveData = function(){
-  //
-  // }
 })
-
-var func = function(){
-  return "func"
-}
