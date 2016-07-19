@@ -23,7 +23,7 @@ angular.module('goalProgress', [])
 
       response.data.forEach(function(goal) {
         $scope.categories.widths[goal.category] =
-          Math.floor((totalActivityLength[goal.category] / (goal.time * 60000)) * 100);
+          Math.floor((totalActivityLength[goal.category] / (goal.time * 60 * 60 * 1000)) * 100);
         if ($scope.categories.widths[goal.category] > 100) {
           $scope.categories.widths[goal.category] = 100;
         }
