@@ -120,7 +120,7 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
           })
 
           containerArray.forEach(function(obj){
-            
+
             var percentage = (obj.stop - obj.start)/1000/60/60/24*100
             var category = colorMap[date][JSON.stringify(obj)]
             var percentageObj = {}
@@ -134,7 +134,7 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
         // function insertBlankSpace(sortedActivityArray){
         //   var parsedContainer = []
         //   if(sortedActivityArray.length<2){
-            
+
         //   }
         //   for(var i = 0; i< sortedActivityArray.length -1; i++){
         //     parsedContainer.push(JSON.parse(sortedActivityArray[i]));
@@ -180,7 +180,7 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
           $scope.labels.push(prop);
           $scope.data.push(Math.round(dougnutData[prop]/1000/60/60));
         }
-        
+
       }
     });
   }])
@@ -211,7 +211,7 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
         }]
       },
       {
-        category: 'Fun',
+        category: 'Exercise',
         status: 'Start',
         timestamp: null,
         time: 0,
@@ -243,7 +243,7 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
         }]
       },
       {
-        category: 'Development',
+        category: 'Improvement',
         status: 'Start',
         timestamp: null,
         time: 0,
