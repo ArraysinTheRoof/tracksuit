@@ -1,4 +1,3 @@
-
 <div class="col-lg-3 col-md-6" ng-repeat="category in categories">
   <div class="panel {{category.colorClass}}">
     <div class="panel-heading">
@@ -8,10 +7,10 @@
         </div>
         <div class="col-xs-9 text-right">
           <div class="huge">
-            <button class='btn btn-lg btn-default' ng-click="sendData(category.category, selectedActivity);"> Submit </button>
+            <button class='btn btn-lg btn-default' ng-click="sendData(category.category, selectedActivity); timestamp(category); checkStatus(category);"> {{category.status}} </button>
           </div>
           <div>
-            Started: [Moment Stamp]
+            Started: {{category.timestamp}}
           </div>
         </div>
         <div class="activities">

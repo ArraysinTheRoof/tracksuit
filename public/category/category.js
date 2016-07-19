@@ -1,6 +1,18 @@
 var category = angular.module('category', ['angularMoment', 'chart.js'])
   .controller('categoryController', ['$scope', '$http', '$document', 'categoryFactory', function($scope, $http, $document, categoryFactory) {
 
+    $scope.checkStatus = function(category) {
+      category.status === "Start" ? category.status = "Stop" : category.status = "Start";
+    };
+
+    $scope.timestamp = function(category) {
+      if(category.status === "Start") {
+        category.timestamp = moment(Date.now()).fromNow();
+      } else {
+        category.timestamp = null;
+      }
+    };
+
     $scope.categories = categoryFactory.categories;
 
     $scope.sendData = function(category, selectedActivity){
@@ -174,11 +186,18 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
   }])
 
   .factory('categoryFactory', ['$document', '$http', function($document, $http){
-    // var category = {};
+
+    // var status = {
+    //   start: 'Start',
+    //   stop: 'Stop',
+    //   time: 'now'
+    // }
 
     var categories = [
       {
         category: 'Sleep',
+        status: 'Start',
+        timestamp: null,
         time: 0,
         colorClass: 'panel-primary',
         activities: [
@@ -193,6 +212,8 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
       },
       {
         category: 'Fun',
+        status: 'Start',
+        timestamp: null,
         time: 0,
         colorClass: 'panel-green',
         activities: [
@@ -207,6 +228,8 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
       },
       {
         category: 'Work',
+        status: 'Start',
+        timestamp: null,
         time: 0,
         colorClass: 'panel-red',
         activities: [
@@ -221,6 +244,8 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
       },
       {
         category: 'Development',
+        status: 'Start',
+        timestamp: null,
         time: 0,
         colorClass: 'panel-yellow',
         activities: [

@@ -78,7 +78,7 @@
 
 <div ng-controller="categoryController" ng-model="category" >
     <div class="row">
-        <h2>Calendar View</h2>
+        <h2 class="category">Calendar View</h2>
         <p>See your daily activities here:</p>
         <div class= "col-xs-1"></div>
         <div class="col-xs-11 progress">
@@ -113,10 +113,11 @@
             <div class="col-xs-11 progress">
               <div ng-repeat="percentage in percentageArr" class="progress-bar {{percentage.category}}" role="progressbar" ng-style="{'width': percentage.percentage + '%'}">
               </div>
-            </div>   
+            </div>
         </div>
     </div>
 
+</br>
 
     <div class="row">
         <div class="col-lg-12">

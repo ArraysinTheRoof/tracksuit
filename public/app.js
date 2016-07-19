@@ -4,7 +4,6 @@ angular.module("app", [
   'goals',
   'ui.router',
   'angularMoment',
-  'Auth',
   'goalProgress'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
@@ -28,9 +27,9 @@ angular.module("app", [
     templateUrl: './goals/goals.html',
     controller: 'goalsController',
     authenticate: true
-  })
+  });
 })
-.run(['$rootScope', '$location', '$state', '$window', function ($rootScope, $location, $state, $window, sAuth) {
+.run(['$rootScope', '$location', '$state', '$window', function ($rootScope, $location, $state, $window) {
 
   $rootScope.user = {};
 
@@ -51,7 +50,7 @@ angular.module("app", [
         FB.api('/me', function(res) {
           $rootScope.$apply(function() {
             $rootScope.user.data = res;
-            console.log($rootScope.user)
+            console.log($rootScope.user);
           });
         });
         $state.go('dashboard');
@@ -77,6 +76,6 @@ angular.module("app", [
       $state.transitionTo("signin");
       event.preventDefault();
     }
-  })
+  });
 
 }]);

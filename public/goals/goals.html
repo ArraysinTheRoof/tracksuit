@@ -16,7 +16,6 @@
     <!-- ** Set Goals ************ -->
     <div class="col-lg-3 col-md-6" ng-repeat="category in categories">
       <div class="panel {{category.colorClass}}">
-        <!-- panel-heading breaks number display. wtf. -->
         <div class="panel-heading">
           <div class="row">
             <div class="col-xs-3">
@@ -35,27 +34,7 @@
             <div>
             </br><span class='goal-display'>Current Goal: {{goals[category.name].time}} Hours<span>
             </div>
-            <!-- <select ng-options="activity as activity.label for activity in activities track by activity.id"
-            ng-model="selectedActivity">
-              {{activity}}
-            </select> -->
           </div>
         </div>
       </div>
     </div>
-
-
-<!-- <div class='goal-entry' ng-repeat='category in categories'>
-  <form class='goal-input' ng-submit='createGoal(category.name, category.time); postGoal();'>
-    <li>
-      Activity: <span class='category-name'>{{category.name}}</span>
-      for <input type='number' name='time' ng-model='category.time'> Hours
-      <input type="submit" name="submit" value="Edit Goal" class='submit-button'>
-    </li>
-  </form>
-</div> -->
-<!-- <h3>Your Current Goals:</h3>
-<div class='goal-display-container' ng-repeat='category in categories'>
-  <div class='goal-display'>{{category.name}} Goal: {{goals[category.name].time}} Hours
-  </div>
-</div> -->
