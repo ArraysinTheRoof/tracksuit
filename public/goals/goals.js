@@ -36,10 +36,10 @@ angular.module('goals', [])
 
 .factory('goalsFactory', ['$http', '$rootScope', function($http, $rootScope) {
   var categories = [
-    { name: 'sleep', time: 0, colorClass: 'panel-primary' },
-    { name: 'exercise', time: 0, colorClass: 'panel-green' },
-    { name: 'work', time: 0, colorClass: 'panel-red' },
-    { name: 'Self Improvement', time: 0, colorClass: 'panel-yellow'}
+    { name: 'sleep', displayName: 'Sleep', time: 0, colorClass: 'panel-primary' },
+    { name: 'exercise', displayName: 'Exercise', time: 0, colorClass: 'panel-green' },
+    { name: 'work', displayName: 'Work', time: 0, colorClass: 'panel-red' },
+    { name: 'Self Improvement', displayName: 'Improvement', time: 0, colorClass: 'panel-yellow'}
   ];
   var goals = {};
 

@@ -195,7 +195,8 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
 
     var categories = [
       {
-        category: 'Sleep',
+        category: 'sleep',
+        displayName: 'Sleep',
         status: 'Start',
         timestamp: null,
         time: 0,
@@ -211,7 +212,8 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
         }]
       },
       {
-        category: 'Exercise',
+        category: 'exercise',
+        displayName: 'Exercise',
         status: 'Start',
         timestamp: null,
         time: 0,
@@ -227,7 +229,8 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
         }]
       },
       {
-        category: 'Work',
+        category: 'work',
+        displayName: 'Work',
         status: 'Start',
         timestamp: null,
         time: 0,
@@ -243,7 +246,8 @@ var category = angular.module('category', ['angularMoment', 'chart.js'])
         }]
       },
       {
-        category: 'Improvement',
+        category: 'Self Improvement',
+        displayName: 'Improvement',
         status: 'Start',
         timestamp: null,
         time: 0,
